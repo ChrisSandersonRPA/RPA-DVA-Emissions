@@ -107,7 +107,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This block of code is shows a workflow that will scrape data about low and ultra-low emission cars from &quot;https://carfueldata.vehicle-certification-agency.gov.uk/search-by-low-emissions.aspx&quot; and paste the data into 2 separate spreadsheets ('Low Emission Cars' and 'Ultra-Low Emission Cars') in the Excel File 'DVA Emissions.xlsx'" DisplayName="Main Sequence - DVA Emissions Check" sap:VirtualizedContainerService.HintSize="1304.8,11285.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This block of code is shows a workflow that will scrape data about low and ultra-low emission cars from &quot;https://carfueldata.vehicle-certification-agency.gov.uk/search-by-low-emissions.aspx&quot; and paste the data into 2 separate spreadsheets ('Low Emission Cars' and 'Ultra-Low Emission Cars') in the Excel File 'DVA Emissions.xlsx'" DisplayName="Main Sequence - DVA Emissions Check" sap:VirtualizedContainerService.HintSize="1193.6,6699.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="PreviousDatesDT" />
       <Variable x:TypeArguments="x:String" Name="LastDate" />
@@ -122,7 +122,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="This clock of code shows a workflow that checks if this process has been completed within the past week or not." DisplayName="Sequence - Process Check" sap:VirtualizedContainerService.HintSize="1131.2,11811.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap2010:Annotation.AnnotationText="This clock of code shows a workflow that checks if this process has been completed within the past week or not." DisplayName="Sequence - Process Check" sap:VirtualizedContainerService.HintSize="1244,6104.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="LastWeek" />
         <Variable x:TypeArguments="s:DateTime[]" Name="LastWeekArray" />
@@ -137,7 +137,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:ReadRange AddHeaders="False" sap2010:Annotation.AnnotationText="This creates a data table of the previous dates this process has run successfully." DataTable="[PreviousDatesDT]" DisplayName="Read Range Workbook - &quot;Previous Dates.xlsx&quot;" sap:VirtualizedContainerService.HintSize="1068.8,96.8" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="PreviousDates" WorkbookPath="PreviousDates.xlsx">
+      <ui:ReadRange AddHeaders="False" sap2010:Annotation.AnnotationText="This creates a data table of the previous dates this process has run successfully." DataTable="[PreviousDatesDT]" DisplayName="Read Range Workbook - &quot;Previous Dates.xlsx&quot;" sap:VirtualizedContainerService.HintSize="1181.6,96.8" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="PreviousDates" WorkbookPath="PreviousDates.xlsx">
         <ui:ReadRange.Range>
           <InArgument x:TypeArguments="x:String">
             <Literal x:TypeArguments="x:String" Value="" />
@@ -151,7 +151,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ReadRange>
-      <ui:OutputDataTable DataTable="[PreviousDatesDT]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="1068.8,52.8" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[DatesString]">
+      <ui:OutputDataTable DataTable="[PreviousDatesDT]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="1181.6,52.8" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[DatesString]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -159,7 +159,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:OutputDataTable>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1068.8,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Dates: &quot; + DatesString]">
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1181.6,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Dates: &quot; + DatesString]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -167,7 +167,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <Assign DisplayName="Assign - Initialize Array" sap:VirtualizedContainerService.HintSize="1068.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign DisplayName="Assign - Initialize Array to hold values of today and the last 7 days" sap:VirtualizedContainerService.HintSize="1181.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
         <Assign.To>
           <OutArgument x:TypeArguments="s:DateTime[]">[LastWeekArray]</OutArgument>
         </Assign.To>
@@ -175,7 +175,7 @@
           <InArgument x:TypeArguments="s:DateTime[]">[new DateTime(8){}]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign DisplayName="Assign - Set Array to include dates for today and the last 7 days before" sap:VirtualizedContainerService.HintSize="1068.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign DisplayName="Assign - Set Array to include dates for today and the last 7 days before" sap:VirtualizedContainerService.HintSize="1181.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_2">
         <Assign.To>
           <OutArgument x:TypeArguments="s:DateTime[]">[LastWeekArray]</OutArgument>
         </Assign.To>
@@ -183,7 +183,7 @@
           <InArgument x:TypeArguments="s:DateTime[]">[{DateTime.Now, DateTime.Now.AddDays(-1), DateTime.Now.AddDays(-2), DateTime.Now.AddDays(-3), DateTime.Now.AddDays(-4), DateTime.Now.AddDays(-5), DateTime.Now.AddDays(-6), DateTime.Now.AddDays(-7)}]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap2010:Annotation.AnnotationText="Assigning the value False to the variable LastWeek, because until we run the process we have to assume it hasn't been run in the past week." DisplayName="Assign - LastWeek" sap:VirtualizedContainerService.HintSize="1068.8,125.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign sap2010:Annotation.AnnotationText="Assigning the value False to the variable LastWeek, because until we run the process we have to assume it hasn't been run in the past week." DisplayName="Assign - LastWeek" sap:VirtualizedContainerService.HintSize="1181.6,125.6" sap2010:WorkflowViewState.IdRef="Assign_3">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Boolean">[LastWeek]</OutArgument>
         </Assign.To>
@@ -196,7 +196,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <Assign sap:VirtualizedContainerService.HintSize="1068.8,81.6" sap2010:WorkflowViewState.IdRef="Assign_9">
+      <Assign sap:VirtualizedContainerService.HintSize="1181.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_9">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Boolean">[LastWeekBool]</OutArgument>
         </Assign.To>
@@ -204,42 +204,43 @@
           <InArgument x:TypeArguments="x:Boolean">True</InArgument>
         </Assign.Value>
       </Assign>
-      <If Condition="[PreviousDatesDT.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="1068.8,536.8" sap2010:WorkflowViewState.IdRef="If_5">
+      <If Condition="[PreviousDatesDT.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="1181.6,52.8" sap2010:WorkflowViewState.IdRef="If_5">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence sap:VirtualizedContainerService.HintSize="400,164.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence sap:VirtualizedContainerService.HintSize="468,224.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="337.6,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch sap2010:Annotation.AnnotationText="This checks and assigns true or false relating to whether the process has been run in the past week and whether the process can be continued." DisplayName="Try Catch - Check if Process has been run in the past week." sap:VirtualizedContainerService.HintSize="405.6,112.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <ui:ForEach x:TypeArguments="s:DateTime" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="767.2,1361.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[LastWeekArray]">
+                <ui:ForEach x:TypeArguments="s:DateTime" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="767.2,1363.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[LastWeekArray]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="s:DateTime">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="s:DateTime" Name="currentDate" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="732,1236.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="732,1237.6" sap2010:WorkflowViewState.IdRef="Sequence_10">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[PreviousDatesDT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="669.6,1124.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                        <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[PreviousDatesDT]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="669.6,1125.6" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                           <ui:ForEachRow.Body>
                             <ActivityAction x:TypeArguments="sd:DataRow">
                               <ActivityAction.Argument>
@@ -359,18 +360,19 @@
           </Sequence>
         </If.Else>
       </If>
-      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{DateTime.Now.ToString}]" DataTable="[PreviousDatesDT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="1068.8,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-      <ui:OutputDataTable DataTable="[PreviousDatesDT]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="1068.8,80.8" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[DatesString]" />
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1068.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Dates : &quot; + DatesString]" />
-      <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1068.8,9636.8" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{DateTime.Now.ToString}]" DataTable="[PreviousDatesDT]" DisplayName="Add Data Row - Add New Row to DataTable" sap:VirtualizedContainerService.HintSize="1181.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+      <ui:OutputDataTable DataTable="[PreviousDatesDT]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="1181.6,80.8" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[DatesString]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1181.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Dates : &quot; + DatesString]" />
+      <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="1181.6,4534.4" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
         <ui:IfElseIf.ConditionBlocks>
           <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
             <ui:IfElseIfBlock BlockType="If" Condition="[LastWeek = False and LastWeekBool = True]">
               <ui:IfElseIfBlock.Then>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,248" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence sap2010:Annotation.AnnotationText="Processs has been run in the past week so these messages can be displayed." DisplayName="Body - Display these messages if the process has been run within the past week " sap:VirtualizedContainerService.HintSize="400,292" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" sap2010:Annotation.AnnotationText="This message box is displayed to the user to satate the process cannot be run as it has already been run in the past week." AutoCloseAfter="00:00:00" DisplayName="Message Box - Saying Process cannot be run" sap:VirtualizedContainerService.HintSize="337.6,136" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Hi, this process has already been completed this week.&quot; + Environment.NewLine + &quot;It was previously run on &quot; + LastDate]">
@@ -385,20 +387,20 @@
             </ui:IfElseIfBlock>
             <ui:IfElseIfBlock BlockType="Else">
               <ui:IfElseIfBlock.Then>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="922.4,9156.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="671.2,4010.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:WriteRange AddHeaders="False" sap2010:Annotation.AnnotationText="This updates the Excel file that records the dates that the process has been done, to include today." DataTable="[PreviousDatesDT]" DisplayName="Write Range Workbook - Previous Dates" sap:VirtualizedContainerService.HintSize="860,160" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="PreviousDates" StartingCell="A1" WorkbookPath="PreviousDates.xlsx">
+                  <ui:WriteRange AddHeaders="False" sap2010:Annotation.AnnotationText="This updates the Excel file that records the dates that the process has been done, to include today." DataTable="[PreviousDatesDT]" DisplayName="Write Range Workbook - Previous Dates" sap:VirtualizedContainerService.HintSize="608.8,160" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="PreviousDates" StartingCell="A1" WorkbookPath="PreviousDates.xlsx">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:WriteRange>
-                  <Sequence DisplayName="Sequence - Open Browser" sap:VirtualizedContainerService.HintSize="860,1524.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Sequence - Open Browser" sap:VirtualizedContainerService.HintSize="608.8,1524.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -534,7 +536,7 @@
                       </ui:OpenBrowser.Body>
                     </ui:OpenBrowser>
                   </Sequence>
-                  <Sequence DisplayName="Sequence - Obtaining Low Emissions Information " sap:VirtualizedContainerService.HintSize="860,1350.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Sequence - Obtaining Low Emissions Information " sap:VirtualizedContainerService.HintSize="608.8,1350.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -665,10 +667,12 @@
                       </ui:BrowserScope>
                     </Sequence>
                   </Sequence>
-                  <Sequence DisplayName="Sequence - Low Emissions Spreadsheet" sap:VirtualizedContainerService.HintSize="860,1688" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                  <Sequence sap2010:Annotation.AnnotationText="This either uses Excel or Workbook activities to Store the 'LowEmissionCarsDT' into the desired workbook and sheet." DisplayName="Sequence - Low Emissions Spreadsheet" sap:VirtualizedContainerService.HintSize="608.8,127.2" sap2010:WorkflowViewState.IdRef="Sequence_34">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="797.6,1576" sap2010:WorkflowViewState.IdRef="TryCatch_2">
@@ -753,7 +757,7 @@
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="s:ArgumentException" Name="exception" />
                             </ActivityAction.Argument>
-                            <Sequence sap:VirtualizedContainerService.HintSize="540,808.8" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                            <Sequence sap:VirtualizedContainerService.HintSize="540,809.6" sap2010:WorkflowViewState.IdRef="Sequence_33">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -799,19 +803,20 @@
                       </TryCatch.Catches>
                     </TryCatch>
                   </Sequence>
-                  <Sequence DisplayName="Sequence - Obtaining Ultra-Low Emissions Information" sap:VirtualizedContainerService.HintSize="860,3066.4" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Sequence - Obtaining Ultra-Low Emissions Information" sap:VirtualizedContainerService.HintSize="608.8,83.2" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="592,2954.4" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Private="False" Url="https://carfueldata.vehicle-certification-agency.gov.uk/search-by-low-emissions.aspx">
+                    <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="592,3146.4" sap2010:WorkflowViewState.IdRef="OpenBrowser_2" Private="False" Url="https://carfueldata.vehicle-certification-agency.gov.uk/search-by-low-emissions.aspx">
                       <ui:OpenBrowser.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558.4,2852" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558.4,3044" sap2010:WorkflowViewState.IdRef="Sequence_26">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:Boolean" Name="GDPRCookieButton" />
                               <Variable x:TypeArguments="x:Boolean" Name="ViewLowUltraLowButton" />
@@ -841,7 +846,7 @@
                                 <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                                   <ui:IfElseIfBlock BlockType="If" Condition="[GDPRCookieButton = True]">
                                     <ui:IfElseIfBlock.Then>
-                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="400,219.2" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                      <Sequence DisplayName="Body - Click Accept cookies Button" sap:VirtualizedContainerService.HintSize="400,219.2" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -889,7 +894,7 @@
                                 </ui:Target>
                               </ui:UiElementExists.Target>
                             </ui:UiElementExists>
-                            <ui:IfElseIf sap2010:Annotation.AnnotationText="This checks if cookies and privacy policy needs to be accepted before viewing emissions data." DisplayName="If - Cookies Need to be Accepted" sap:VirtualizedContainerService.HintSize="496,459.2" sap2010:WorkflowViewState.IdRef="IfElseIf_5">
+                            <ui:IfElseIf sap2010:Annotation.AnnotationText="This checks if a link needs to be clicked to view the Zero, Low and Ultra-Low Emission Cars Page." DisplayName="If - Link needs to be clicked to view page" sap:VirtualizedContainerService.HintSize="496,459.2" sap2010:WorkflowViewState.IdRef="IfElseIf_5">
                               <ui:IfElseIf.ConditionBlocks>
                                 <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                                   <ui:IfElseIfBlock BlockType="If" Condition="[ViewLowUltraLowButton = True]">
@@ -900,7 +905,7 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'H3'" sap:VirtualizedContainerService.HintSize="337.6,107.2" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
+                                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Link to view the table relating to the Zero, Low and Ultra-Low Emission Cars" sap:VirtualizedContainerService.HintSize="337.6,107.2" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT">
                                           <ui:Click.CursorPosition>
                                             <ui:CursorPosition Position="Center">
                                               <ui:CursorPosition.OffsetX>
@@ -930,7 +935,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:IfElseIf>
-                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT '" sap:VirtualizedContainerService.HintSize="496,107.2" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT ' - Low Emission Cars" sap:VirtualizedContainerService.HintSize="496,107.2" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -949,7 +954,7 @@
                                 </ui:Target>
                               </ui:Click.Target>
                             </ui:Click>
-                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT ' - Select Ultra-low Emission" sap:VirtualizedContainerService.HintSize="496,107.2" sap2010:WorkflowViewState.IdRef="Click_18" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT ' - Select Ultra-low Emission Cars" sap:VirtualizedContainerService.HintSize="496,107.2" sap2010:WorkflowViewState.IdRef="Click_18" KeyModifiers="None" MouseButton="BTN_LEFT">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -968,7 +973,7 @@
                                 </ui:Target>
                               </ui:Click.Target>
                             </ui:Click>
-                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT '" sap:VirtualizedContainerService.HintSize="496,107.2" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="Updates the table to only have data relating to the filter." ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT ' - Update button" sap:VirtualizedContainerService.HintSize="496,151.2" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -986,8 +991,13 @@
                                   </ui:Target.TimeoutMS>
                                 </ui:Target>
                               </ui:Click.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
                             </ui:Click>
-                            <Sequence DisplayName="Basic" sap:VirtualizedContainerService.HintSize="496,247.2" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                            <Sequence DisplayName="Basic - Specifies the value '100' from the dopdown menu" sap:VirtualizedContainerService.HintSize="496,247.2" sap2010:WorkflowViewState.IdRef="Sequence_39">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1017,7 +1027,7 @@
                                 </ui:SelectItem.Target>
                               </ui:SelectItem>
                             </Sequence>
-                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT '" sap:VirtualizedContainerService.HintSize="496,107.2" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="Selects Go which will generate the 100 results per page." ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT ' - Go button" sap:VirtualizedContainerService.HintSize="496,151.2" sap2010:WorkflowViewState.IdRef="Click_13" KeyModifiers="None" MouseButton="BTN_LEFT">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -1035,11 +1045,17 @@
                                   </ui:Target.TimeoutMS>
                                 </ui:Target>
                               </ui:Click.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
                             </ui:Click>
-                            <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="496,478.4" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                            <Sequence sap2010:Annotation.AnnotationText="This scrapes data from the table related to the 'Ultra-Low Emissions' filter and stores it in the UltraLowEmissionCarsDT variable." DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="496,522.4" sap2010:WorkflowViewState.IdRef="Sequence_41">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'CO2Emissi Page'" sap:VirtualizedContainerService.HintSize="433.6,366.4" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="b7f7aa6e145947886c28eedaa9cada20" Selector="&lt;html app='msedge.exe' title='CO2 Emissions : Directgov - Find new cars by fuel economy' /&gt;">
@@ -1068,7 +1084,7 @@
                                 </ui:BrowserScope.Body>
                               </ui:BrowserScope>
                             </Sequence>
-                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT '" sap:VirtualizedContainerService.HintSize="496,107.2" sap2010:WorkflowViewState.IdRef="Click_19" KeyModifiers="None" MouseButton="BTN_LEFT">
+                            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" sap2010:Annotation.AnnotationText="This allows the user to be able to get the correct data they want next time, by making sure that the Low Emission Cars check box is checked." ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT ' - Check the Low Emission Cars Checkbox" sap:VirtualizedContainerService.HintSize="496,167.2" sap2010:WorkflowViewState.IdRef="Click_19" KeyModifiers="None" MouseButton="BTN_LEFT">
                               <ui:Click.CursorPosition>
                                 <ui:CursorPosition Position="Center">
                                   <ui:CursorPosition.OffsetX>
@@ -1086,17 +1102,23 @@
                                   </ui:Target.TimeoutMS>
                                 </ui:Target>
                               </ui:Click.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
                             </ui:Click>
                           </Sequence>
                         </ActivityAction>
                       </ui:OpenBrowser.Body>
                     </ui:OpenBrowser>
                   </Sequence>
-                  <Sequence DisplayName="Sequence - Ultra-Low Emissions Spreadsheet" sap:VirtualizedContainerService.HintSize="860,1055.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence sap2010:Annotation.AnnotationText="This inputs the values stored in the Ultra-LowEmissionsDT variable into the DVA Emissions Workbook in a new sheet." DisplayName="Sequence - Ultra-Low Emissions Spreadsheet" sap:VirtualizedContainerService.HintSize="608.8,127.2" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="672.8,943.2" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_5" InstanceCachePeriod="3000" WorkbookPath="DVA Emissions.xlsx">
@@ -1250,41 +1272,49 @@
                       </ui:ExcelApplicationScope.Body>
                     </ui:ExcelApplicationScope>
                   </Sequence>
+                  <Sequence DisplayName="Sequence - Email" sap:VirtualizedContainerService.HintSize="608.8,285.6" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <umab:OutlookApplicationCard Account="{x:Null}" AccountMismatchBehavior="UseDefaultEmailAccount" sap2010:Annotation.AnnotationText="This sends an email and the attached 'DVA Emissions.xlsx' file to 'sophia.connolly@schoolofautomation.tech', with peter tower and christopher sanderson CC'd in as well." DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="337.6,173.6" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_2">
+                      <umab:OutlookApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="um:IMailQuickHandle">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Outlook" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,258.4" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:SendOutlookMail Account="{x:Null}" Body="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Bcc="peter.tower@schoolofautomation.tech" Cc="christopher.sanderson@schoolofautomation.tech" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="337.6,146.4" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="DVA Emissions Excel file" To="sophia.connolly@schoolofautomation.tech">
+                              <ui:SendOutlookMail.Files>
+                                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                                  <InArgument x:TypeArguments="x:String">DVA Emissions.xlsx</InArgument>
+                                </scg:List>
+                              </ui:SendOutlookMail.Files>
+                            </ui:SendOutlookMail>
+                          </Sequence>
+                        </ActivityAction>
+                      </umab:OutlookApplicationCard.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </umab:OutlookApplicationCard>
+                  </Sequence>
                 </Sequence>
               </ui:IfElseIfBlock.Then>
             </ui:IfElseIfBlock>
           </sc:BindingList>
         </ui:IfElseIf.ConditionBlocks>
       </ui:IfElseIf>
-      <umab:OutlookApplicationCard Account="{x:Null}" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="433.6,442.4" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_2">
-        <umab:OutlookApplicationCard.Body>
-          <ActivityAction x:TypeArguments="um:IMailQuickHandle">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Outlook" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,260.8" sap2010:WorkflowViewState.IdRef="Sequence_38">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <ui:SendOutlookMail Account="{x:Null}" Body="{x:Null}" MailMessage="{x:Null}" ReplyTo="{x:Null}" TimeoutMS="{x:Null}" Bcc="peter.tower@schoolofautomation.tech" Cc="christopher.sanderson@schoolofautomation.tech" DisplayName="Send Outlook Mail Message" sap:VirtualizedContainerService.HintSize="337.6,148.8" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" Importance="Normal" IsBodyHtml="False" IsDraft="False" Sensitivity="Normal" Subject="DVA Emissions Excel file" To="sophia.connolly@schoolofautomation.tech">
-                <ui:SendOutlookMail.Files>
-                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-                    <InArgument x:TypeArguments="x:String">DVA Emissions.xlsx</InArgument>
-                  </scg:List>
-                </ui:SendOutlookMail.Files>
-              </ui:SendOutlookMail>
-            </Sequence>
-          </ActivityAction>
-        </umab:OutlookApplicationCard.Body>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </umab:OutlookApplicationCard>
     </Sequence>
   </Sequence>
 </Activity>

@@ -1,9 +1,13 @@
 DVA Emissions Process Steps:
-"sophia.connolly@schoolofautomation.tech"
+
 Check - Human
 	Run process once every week
+Check - Robot
 	Open Workbook  "PreviousDates.xlsx" and save to PreviousDatesDT
-	Create DateTime Array  
+	Create DateTime Array with previous weeks dates
+	Check if any dates from the previous week are contained in the PreviousDatesDT Variable
+	If there is display message box and log message saying that the process has been completed in the past week.
+	Else Add row to Workbook "PreviousDates.xlsx" and continue
 
 Browser - Robot(Open Browser
 	Click on browser

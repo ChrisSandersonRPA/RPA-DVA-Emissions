@@ -37,6 +37,19 @@ Excel
 	Save Workbook
 	Close Workbook
 
+Browser - Robot(Open Browser
+	Click on browser
+	Enter url "https://carfueldata.vehicle-certification-agency.gov.uk/search-by-low-emissions.aspx"and press enter
+	If(Element Exists - Cookie Policy)
+ {
+	Click 'Accept and Continue' button
+}
+
+	If(Element Exists - 'Find new Zero, Low and Ultra-Low emission cars')
+ {
+	Click 'Find new Zero, Low and Ultra-Low emission cars' button below
+}
+
 Obtaining Information
 	Unclick the 'Show low Emission cars' checkbox
 	Click the 'Show ultra-Low Emission cars' checkbox

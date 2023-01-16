@@ -1,0 +1,55 @@
+DVA Emissions Process Steps:
+"sophia.connolly@schoolofautomation.tech"
+Check - Human
+	Run process once every week
+	Open Workbook  "PreviousDates.xlsx" and save to PreviousDatesDT
+	Create DateTime Array  
+
+Browser - Robot(Open Browser
+	Click on browser
+	Enter url "https://carfueldata.vehicle-certification-agency.gov.uk/search-by-low-emissions.aspx"and press enter
+	If(Element Exists - Cookie Policy)
+ {
+	Click 'Accept and Continue' button
+}
+
+	If(Element Exists - 'Find new Zero, Low and Ultra-Low emission cars')
+ {
+	Click 'Find new Zero, Low and Ultra-Low emission cars' button below
+}
+
+Obtaining Information
+	Unclick the 'Show ultra-Low Emission cars' checkbox if checked
+	Select '100' from the dropdown menu of 'Display items per page'
+	Click 'Go'
+	Using Data Scraping, Copy first 100 results from browser
+
+Excel
+	Open Excel/Create New Spreadsheet
+	paste in A2 cell to paste all items into individual cells
+	Add Headings('manufacturer', 'model', 'description', 'url', 'fuel type', 'co2 g/km', 'imperial combined') into excel
+	Rename 'Sheet 1' as 'Low Emmision cars'
+	Create new sheet and rename it to 'ultra-Low Emission cars'
+	Save Workbook
+	Close Workbook
+
+Obtaining Information
+	Unclick the 'Show low Emission cars' checkbox
+	Click the 'Show ultra-Low Emission cars' checkbox
+	Select '100' from the dropdown menu of 'Display items per page'
+	Click 'Go'	
+	Using Data Scraping, Copy first 100 results from browser
+
+Excel
+	Open Excel/Create New Spreadsheet
+	Add Headings('manufacturer', 'model', 'description', 'url', 'fuel type', 'co2 g/km', 'imperial combined') into excel
+	Add to 'ultra-Low Emission cars' sheet in excel file
+	paste in A2 cell to paste all items into individual cells
+	Save Workbook
+	Close Workbook
+Email
+	Send outlook email activity
+	Compose a new email
+	Address to 'sophia.connolly@schoolofautomation.tech'
+	Attach emissions spreadsheet to email
+	Send email
